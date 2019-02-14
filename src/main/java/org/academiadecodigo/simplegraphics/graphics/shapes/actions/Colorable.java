@@ -1,4 +1,6 @@
-package org.academiadecodigo.simplegraphics.graphics;
+package org.academiadecodigo.simplegraphics.graphics.shapes.actions;
+
+import org.academiadecodigo.simplegraphics.graphics.Color;
 
 /**
  * Methods for modifying a shape color

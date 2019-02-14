@@ -1,10 +1,14 @@
-package org.academiadecodigo.simplegraphics.graphics;
+package org.academiadecodigo.simplegraphics.graphics.shapes;
+
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Colorable;
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Movable;
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Shape;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
 
 public class Line implements Shape, Colorable, Movable {
-    private Color color = Color.BLACK;
+    private org.academiadecodigo.simplegraphics.graphics.Color color = org.academiadecodigo.simplegraphics.graphics.Color.BLACK;
     private double x1;
     private double y1;
     private double x2;
@@ -72,7 +76,7 @@ public class Line implements Shape, Colorable, Movable {
         y1 += dy;
         x2 += dx;
         y2 += dy;
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
@@ -97,7 +101,7 @@ public class Line implements Shape, Colorable, Movable {
             y2 -= dh;
         }
 
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
@@ -105,23 +109,23 @@ public class Line implements Shape, Colorable, Movable {
      *
      * @param newColor the new color
      */
-    public void setColor(Color newColor) {
+    public void setColor(org.academiadecodigo.simplegraphics.graphics.Color newColor) {
         color = newColor;
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
      * Shows this line on the canvas.
      */
     public void draw() {
-        Canvas.getInstance().show(this);
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().show(this);
     }
 
     /**
      * Deletes this line from the canvas.
      */
     public void delete() {
-        Canvas.getInstance().hide(this);
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().hide(this);
     }
 
     public String toString() {

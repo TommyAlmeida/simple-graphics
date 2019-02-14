@@ -1,10 +1,15 @@
-package org.academiadecodigo.simplegraphics.graphics;
+package org.academiadecodigo.simplegraphics.graphics.shapes;
+
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Colorable;
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Fillable;
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Movable;
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Shape;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class Rectangle implements Shape, Colorable, Fillable, Movable {
-    private Color color = Color.BLACK;
+    private org.academiadecodigo.simplegraphics.graphics.Color color = org.academiadecodigo.simplegraphics.graphics.Color.BLACK;
     private boolean filled = false;
     private double x;
     private double y;
@@ -85,7 +90,7 @@ public class Rectangle implements Shape, Colorable, Fillable, Movable {
     public void translate(double dx, double dy) {
         x += dx;
         y += dy;
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
@@ -99,7 +104,7 @@ public class Rectangle implements Shape, Colorable, Fillable, Movable {
         height += 2 * dh;
         x -= dw;
         y -= dh;
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
@@ -108,9 +113,9 @@ public class Rectangle implements Shape, Colorable, Fillable, Movable {
      * @param newColor the new color
      */
     @Override
-    public void setColor(Color newColor) {
+    public void setColor(org.academiadecodigo.simplegraphics.graphics.Color newColor) {
         color = newColor;
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
@@ -119,7 +124,7 @@ public class Rectangle implements Shape, Colorable, Fillable, Movable {
     @Override
     public void draw() {
         filled = false;
-        Canvas.getInstance().show(this);
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().show(this);
     }
 
     /**
@@ -127,7 +132,7 @@ public class Rectangle implements Shape, Colorable, Fillable, Movable {
      */
     @Override
     public void delete() {
-        Canvas.getInstance().hide(this);
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().hide(this);
     }
 
     /**
@@ -136,7 +141,7 @@ public class Rectangle implements Shape, Colorable, Fillable, Movable {
     @Override
     public void fill() {
         filled = true;
-        Canvas.getInstance().show(this);
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().show(this);
     }
 
     @Override

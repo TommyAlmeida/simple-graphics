@@ -1,6 +1,7 @@
 package org.academiadecodigo.simplegraphics.keyboard;
 
 import org.academiadecodigo.simplegraphics.graphics.Canvas;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;

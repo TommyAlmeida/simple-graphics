@@ -1,4 +1,4 @@
-package org.academiadecodigo.simplegraphics.graphics;
+package org.academiadecodigo.simplegraphics.graphics.shapes.actions;
 
 /**
  * Methods for moving a shape

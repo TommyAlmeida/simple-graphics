@@ -1,10 +1,14 @@
-package org.academiadecodigo.simplegraphics.graphics;
+package org.academiadecodigo.simplegraphics.graphics.shapes;
+
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Colorable;
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Movable;
+import org.academiadecodigo.simplegraphics.graphics.shapes.actions.Shape;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Text implements Shape, Colorable, Movable {
-    private Color color = Color.BLACK;
+    private org.academiadecodigo.simplegraphics.graphics.Color color = org.academiadecodigo.simplegraphics.graphics.Color.BLACK;
     private JLabel label = new JLabel();
     private double x;
     private double y;
@@ -71,7 +75,7 @@ public class Text implements Shape, Colorable, Movable {
     public void translate(double dx, double dy) {
         x += dx;
         y += dy;
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
@@ -83,7 +87,7 @@ public class Text implements Shape, Colorable, Movable {
     public void grow(double dw, double dh) {
         xGrow += dw;
         yGrow += dh;
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
@@ -91,9 +95,9 @@ public class Text implements Shape, Colorable, Movable {
      *
      * @param newColor the new color
      */
-    public void setColor(Color newColor) {
+    public void setColor(org.academiadecodigo.simplegraphics.graphics.Color newColor) {
         color = newColor;
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
@@ -102,21 +106,21 @@ public class Text implements Shape, Colorable, Movable {
      */
     public void setText(String message) {
         label.setText(message);
-        Canvas.getInstance().repaint();
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().repaint();
     }
 
     /**
      * Shows this text on the canvas.
      */
     public void draw() {
-        Canvas.getInstance().show(this);
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().show(this);
     }
 
     /**
      * Deletes this text from the canvas
      */
     public void delete() {
-        Canvas.getInstance().hide(this);
+        org.academiadecodigo.simplegraphics.graphics.Canvas.getInstance().hide(this);
     }
 
     public String toString() {
